@@ -1,0 +1,125 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#combate {
+    display: none;
+    width: 100%;
+    height: 100%;
+    gap: 150px;
+    position: relative;
+    z-index: 1; 
+}
+
+#combate.mostrar {
+    display: flex; 
+    animation: mostrarCombate 1s ease-out; 
+}
+
+#combate.ocultar {
+    display: none; 
+    animation: mostrarCombate 1s ease-out;
+    
+}
+
+
+@keyframes mostrarCombate {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#mipokemon, #pokemonrival {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); 
+}
+
+.imagenpokemon {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 10px; 
+}
+
+#nombre, #nombrerival {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px; 
+}
+
+#tipos, #tiposrival {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px; 
+}
+
+.tipo {
+    width: 120px;
+    height: 40px;
+}
+
+#caracteristicas, #caracteristicasrival {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+    font-size: 16px;
+    color: #ddd;
+}
+
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: -1; 
+    overflow: hidden; 
+}
+
+.imagen {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    transition: transform 1.5s ease;
+}
+
+.izquierda {
+    left: -100vw; 
+}
+
+.derecha {
+    left: 100vw; 
+}
+
+.mostrar.izquierda {
+    transform: translateX(100vw); 
+}
+
+.mostrar.derecha {
+    transform: translateX(-100vw); 
+}
+
+        

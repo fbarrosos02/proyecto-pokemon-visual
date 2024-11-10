@@ -1,0 +1,337 @@
+/*pantalla pricnipal */
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #2b2c2f;
+}
+
+#pantallaPrincipal {
+    width: 1051px;
+    height: 1050px;
+    margin: 20px auto;
+    background-color: #333;
+    display: flex;                 
+    justify-content: space-between; 
+    align-items: flex-start;       
+}
+
+#izq{
+    display: flex;                 
+    flex-direction: column;    
+    margin: 20px;  
+    margin-right: 0;
+    gap: 15px;  
+}
+
+#titulo {
+    height: 120px;
+}
+
+#infoPokemon, #tipos, #titulo {
+    width: 320px;
+}
+
+/*Seccion de el pokemon elegido por el usuario*/
+#infoPokemon {
+    background-image: url('/img/textbox2.png'); 
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    width: 300px;
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 8px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+#infoPokemon2 {
+    height: 260px;
+    width: 300px;
+    margin: 0;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    gap: 8px; 
+    align-items: center;
+    justify-items: center;
+    padding: 15px;
+}
+
+#infoPokemon2 > img {
+    width: 110px;
+    height: 110px;
+    grid-row: 1; 
+}
+
+.nombre-pokemon {
+    margin-bottom: 1px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    grid-row: 2; 
+}
+
+.caracteristicas {
+    width: 100%;
+    display: flex;
+    justify-content: space-around; 
+    font-size: 10px;
+    color: #555;
+    text-align: center;
+    grid-row: 3; 
+}
+
+.caracteristicas span {
+    display: block;
+}
+
+#pokemon-infotipos {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    grid-row: 4; 
+}
+
+.pokemon-infotipos > img {
+    width: 80px;
+    height: 30px;
+    border-radius: 4px;
+    margin-left: 10px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+/* Lista de todos los Pokémon */
+#listaPokemons {
+    width: 654px;
+    height: 980px;
+    background-color: #f2f2f2; 
+    margin: 20px;
+    margin-left: 0;
+    display: grid;
+    padding: 15px;
+    grid-template-columns: repeat(auto-fill, 62px);
+    grid-template-rows: repeat(auto-fill, 68px);
+    gap: 16px;
+    border-radius: 8px; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15); 
+    overflow-y: auto; 
+}
+
+/* Estilo para cada Pokémon en la lista */
+.celda-pokemon {
+    width: 62px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #ffffff; 
+    border-radius: 6px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.2s, box-shadow 0.2s; 
+    cursor: pointer; 
+
+}
+
+.celda-pokemon:hover {
+    transform: scale(1.05); 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.celda-pokemon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3); 
+}
+
+.nombre-pokemon {
+    font-size: 12px;
+    margin: 0;
+    color: #333; 
+    text-align: center;
+}
+
+/* Tipos de Pokémon en miniatura */
+.tiposPokemon .tipos {
+    width: 30px;
+    height: 12px;
+    border-radius: 4px;
+    margin-top: 0px;
+}
+
+.tiposPokemon {
+    display: flex;
+    justify-content: center; 
+}
+
+
+/* Estilo para los Pokémon del jugador y del rival */
+
+#pokemonspartida {
+    width: 300px;
+    max-width: 300px;
+    height: 165px; 
+
+    background-color: #f5f5f5; 
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); 
+}
+
+/* Cada Pokémon en la partida */
+.pokemonpartida {
+    width: 150px;
+    height: 150px; 
+    background-image: url('/img/textbox2.png'); 
+    background-size: cover; 
+    background-position: center;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); 
+    border: 2px solid #000;
+    border-radius: 8px;
+    padding: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pokemonpartida:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+}
+
+.pokemonpartida:active {
+    transform: scale(0.95); 
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3);
+}
+
+#pokemonsrpartidanombes{
+    display: flex;
+    margin-right: 30px;
+
+}
+#pokemonsrpartidanombes >p{
+    text-align: center;
+    color: white;
+    
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); 
+}
+
+/* Imagen de cada Pokémon en la partida */
+.pokimg {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 8px; 
+    border-radius: 50%; 
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); 
+}
+
+/*  */
+
+#dialogo {
+    position: relative;
+    width: 320px; 
+}
+
+#textbox {
+    position: relative;
+}
+
+#cuadro-texto {
+    display: block;
+    width: 100%; 
+    
+}
+
+#texto-dialogo {
+    position: absolute;
+    top: 50%;  
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: white; 
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); 
+    background-color: rgba(0, 0, 0, 0.5);
+
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 0px;
+}
+
+#iniciarCombate:hover {
+    transform: scale(1.05); 
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+}
+
+#iniciarCombate:active {
+    transform: scale(0.95); 
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3);
+}
+
+
+/* prueba botones */
+#botonesizq button, #iniciarCombate, #btnborrar  {
+    width: 150px;
+    height: 60px; 
+    background-image: url('/img/textbox.png'); 
+    background-size: cover; 
+    background-position: center;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); 
+    border: 2px solid #000;
+    border-radius: 12px; 
+    padding: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Press Start 2P', cursive;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+#botonesizq, #botonesabajo{
+    display: flex;
+    gap: 15px;
+
+
+}
+
+#izq button:hover {
+    transform: scale(1.05); 
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+}
+
+#izq button:active {
+    transform: scale(0.95);
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3);
+}
+#btnborrar{
+display: inline;
+}
+
+#botonesabajo{
+    display: flex;
+    flex-direction: row;
+}
